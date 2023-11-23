@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .close {
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Que:-  Prevent the browser when i click the form submit button</h1>
+
+    
+    <button onclick="openModal()">Open Modal</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <form id="myForm">
+                <!-- Your form inputs -->
+                <input type="text" id="nameInput" placeholder="Enter your name">
+                <!-- Other form inputs -->
+                <button id="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevents the default form submission
+
+            // Handle your form submission logic here
+            let nameValue = document.getElementById('nameInput').value;
+
+            // Do something with the form data (e.g., display it)
+            alert(`Hello, ${nameValue}! Form submission prevented.`);
+        });
+
+
+    </script>
+</body>
+
+</html>

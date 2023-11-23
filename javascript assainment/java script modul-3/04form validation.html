@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Que:-  Create a form and validate using JavaScript</h1>
+    
+    Name: <input type="text" id="nm" onblur="validateForm(nm,nmErr)" >
+    <b id="nmErr"></b>
+    
+    <br><br>
+    Mobile: <input type="text" id="mb" onblur="validateForm(mb,mbErr)">
+    <b id="mbErr"></b>
+    <br><br>
+
+    password: <input type="text" id="ps" onblur="validateForm(ps,psErr)">
+    <b id="psErr"></b>
+
+
+    <script>
+       
+        function validateForm(tag,e)//mb,mbErr
+        {
+            console.log(tag);//document.getElementById('nm') = mobile
+            console.log(e);//document.getElementById('nmErr')= mbError
+
+            if(tag.value == "")//mobile.value ==""
+            {
+                e.innerHTML ="*Required...!"; // mbError.innerHTML = "sdfsd"
+                tag.style.border ="5px solid red";
+            }
+
+            else 
+            {
+                e.innerHTML ="";
+                tag.style.border ="5px solid green";
+            }
+        }
+       
+
+    
+    </script>
+
+
+</body>
+</html>
